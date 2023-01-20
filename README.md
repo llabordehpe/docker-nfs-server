@@ -92,10 +92,10 @@ Let's break that command down into its individual pieces to see what's required 
 
        The container will look for environment variables that start with `NFS_EXPORT_` and end with an integer. e.g. `NFS_EXPORT_0`, `NFS_EXPORT_1`, etc.
 
-          docker run                                                                       \
-            -e NFS_EXPORT_0='/container/path/foo                  *(ro,no_subtree_check)'  \
-            -e NFS_EXPORT_1='/container/path/bar 123.123.123.123/32(rw,no_subtree_check)'  \
-            ...                                                                            \
+          docker run                                                                     \
+            -e NFS_EXPORT_0=/container/path/foo                  *(ro,no_subtree_check)  \
+            -e NFS_EXPORT_1=/container/path/bar 123.123.123.123/32(rw,no_subtree_check)  \
+            ...                                                                          \
             erichough/nfs-server
 
    1. bake `/etc/exports` into a custom image
